@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, UIManager } from 'react-native'
+import Main from './home/containers/Main'
+
+UIManager.setLayoutAnimationEnabledExperimental &&
+	UIManager.setLayoutAnimationEnabledExperimental(true)
 
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Text>init program</Text>
-			<StatusBar style="auto" />
+			<StatusBar
+				backgroundColor="transparent"
+				animated={true}
+				translucent={true}
+				barStyle="light-content"
+			/>
+			<Main />
 		</View>
 	)
 }
